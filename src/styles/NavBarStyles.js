@@ -27,12 +27,12 @@ const styles = (theme) => ({
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing.unit,
+      marginLeft: theme.spacing,
       width: "auto",
     },
   },
   searchIcon: {
-    width: theme.spacing.unit * 9,
+    width: theme.spacing(4),
     height: "100%",
     position: "absolute",
     display: "flex",
@@ -47,7 +47,7 @@ const styles = (theme) => ({
     paddingTop: theme.spacing.unit,
     paddingRight: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit,
+    paddingLeft: "2rem",
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {

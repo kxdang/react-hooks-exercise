@@ -10,6 +10,23 @@ import SearchIcon from "@material-ui/icons/Search";
 import Switch from "@material-ui/core/Switch";
 import { withStyles } from "@material-ui/core/styles";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { LanguageContext } from "./contexts/LanguageContext";
+import { withLanguageContext } from "./contexts/LanguageContext";
+
+const content = {
+  english: {
+    search: "Search",
+    emoji: "🌹",
+  },
+  french: {
+    search: "Chercher",
+    emoji: "🥖",
+  },
+  spanish: {
+    search: "Buscar",
+    emoji: "🤩",
+  },
+};
 
 class Navbar extends Component {
   static contextType = ThemeContext; //check if you are nested in a context e.g ThemeProvider, as long as its a descendent
@@ -17,6 +34,8 @@ class Navbar extends Component {
   render() {
     const { classes } = this.props;
     const { isDarkMode, toggleTheme } = this.context;
+    const { language } = this.props.languageContext;
+    const { search, emoji } = content[language];
 
     return (
       <div className={classes.root}>
@@ -26,7 +45,7 @@ class Navbar extends Component {
               <span>FR</span>
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit">
-              App Title
+              App Title {emoji}
             </Typography>
             <Switch onChange={toggleTheme} />
             <div className={classes.grow} />
@@ -35,7 +54,7 @@ class Navbar extends Component {
                 <SearchIcon />
               </div>
               <InputBase
-                placeholders="Search..."
+                placeholder={`${search}...`}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
@@ -49,4 +68,4 @@ class Navbar extends Component {
   }
 }
 
-export default withStyles(styles)(Navbar);
+export default withLanguageContext(withStyles(styles)(Navbar));
