@@ -19,7 +19,7 @@ import { LanguageContext } from "./contexts/LanguageContext";
 const WORDS = {
   english: {
     signIn: "Sign In",
-    email: "email",
+    email: "Email",
     password: "Password",
     remember: "Remember Me",
   },

@@ -15,11 +15,11 @@ import { LanguageContext } from "./contexts/LanguageContext";
 const content = {
   english: {
     search: "Search",
-    emoji: "🌹",
+    emoji: "♥",
   },
   french: {
     search: "Chercher",
-    emoji: "🥖",
+    emoji: "🌹",
   },
   spanish: {
     search: "Buscar",
